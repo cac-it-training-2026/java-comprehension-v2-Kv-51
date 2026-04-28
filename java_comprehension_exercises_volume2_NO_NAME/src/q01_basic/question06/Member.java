@@ -66,5 +66,5 @@ public class Member extends AbstMember {
 		System.out.println("*****************");
 	}
 
-	//再度更新
+	//更新
 }
