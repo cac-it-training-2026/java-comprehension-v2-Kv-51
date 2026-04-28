@@ -65,4 +65,6 @@ public class Member extends AbstMember {
 		System.out.println("rank:" + rank);
 		System.out.println("*****************");
 	}
+
+	//更新
 }
