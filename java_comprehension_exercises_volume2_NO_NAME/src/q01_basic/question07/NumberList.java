@@ -13,7 +13,7 @@ class NumberList {
 	 * 整数のList
 	 * 
 	 */
-	private List<Integer> numbers = new ArrayList<>();
+	List<Integer> numbers = new ArrayList<>();
 
 	/**
 	 * 1から引数までの整数をListに代入する
@@ -21,8 +21,9 @@ class NumberList {
 	 * @param limit（Listの最終要素）
 	 */
 	public void addFromOneTo(Integer limit) {
-		//TODO ここから実装する
-
+		for (int i = 1; i <= limit; i++) { //<=にしないと問題通りにならない
+			numbers.add(i);
+		}
 	}
 
 	/**
@@ -30,10 +31,12 @@ class NumberList {
 	 * 
 	 * @return Listの要素の合計値
 	 */
-	public Integer calcSumOfList() {
-		Integer sum = 0;
-		//TODO ここから実装する
 
+	public Integer calcSumOfList() {
+		int sum = 0;
+		for (int listNum : numbers) {
+			sum += listNum;
+		}
 		return sum;
 	}
 
@@ -42,7 +45,9 @@ class NumberList {
 	 * 
 	 */
 	public void doubleListEachValue() {
-		//TODO ここから実装する
+		for (int i = 0; i < numbers.size(); i++) {
+			numbers.set(i, numbers.get(i) * 2); //set(インデックス,値)
+		}
 	}
 
 	/**
@@ -50,8 +55,12 @@ class NumberList {
 	 * 要素数が奇数の場合、中央値は残す
 	 */
 	public void removeIndexOfFirstHalf() {
-		//TODO ここから実装する
+		int mid = numbers.size() / 2; //インデックス/2で
+										//偶数の場合はインデックスの中央値がmidに代入される
+										//奇数の場合は、Javaでは自動的に「中央値を後半扱い」する＝midには中央値の一歩手前が代入される
 
+		numbers.subList(0, mid).clear();
+		//numbers.remove(0); ←iにするとArrayListは値がずれるから変な穴抜けになっちゃう
 	}
 
 	/**
