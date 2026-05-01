@@ -60,6 +60,7 @@ class NumberList {
 										//奇数の場合は、Javaでは自動的に「中央値を後半扱い」する＝midには中央値の一歩手前が代入される
 
 		numbers.subList(0, mid).clear();
+		//numbers.remove(0); ←iにするとArrayListは値がずれるから変な穴抜けになっちゃう
 	}
 
 	/**
